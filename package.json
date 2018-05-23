@@ -1,0 +1,24 @@
+{
+  "name": "fontawesome-icon",
+  "version": "1.0.0",
+  "description": "Web component for displaying FontAwesome icons.",
+  "homepage": "https://github.com/soldag/fontawesome-icon#readme",
+  "license": "MIT",
+  "contributors": [
+    {
+      "name": "Sören Oldag"
+    }
+  ],
+  "main": "fontawesome-icon.js",
+  "dependencies": {
+    "@fortawesome/fontawesome": "^1.1.8",
+    "@fortawesome/fontawesome-free-brands": "^5.0.13",
+    "@fortawesome/fontawesome-free-regular": "^5.0.13",
+    "@fortawesome/fontawesome-free-solid": "^5.0.13",
+    "@polymer/polymer": "^3.0.0"
+  },
+  "devDependencies": {
+    "@polymer/iron-demo-helpers": "^3.0.0-pre.19",
+    "@webcomponents/webcomponentsjs": "^2.0.0"
+  }
+}
