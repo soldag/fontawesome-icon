@@ -15,11 +15,6 @@ import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 class FontawesomeIcon extends PolymerElement {
   static get template() {
     return html`
-      <style>
-        :host {
-          display: block;
-        }
-      </style>
       <div id="container"></div>
     `;
   }
@@ -42,7 +37,10 @@ class FontawesomeIcon extends PolymerElement {
 
   ready() {
     super.ready();
-    this.root.querySelector('style').innerHTML += fontawesome.dom.css();
+
+    let faStyles = document.createElement('style');
+    faStyles.innerHTML = fontawesome.dom.css();
+    this.root.appendChild(faStyles);
   }
 
   _iconChanged(prefix, iconName, fixedWidth) {
