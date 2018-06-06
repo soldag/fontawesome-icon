@@ -26,12 +26,14 @@ class FontawesomeIcon extends PolymerElement {
       name: String,
       /** FontAwesome fixed width parameter (fa-fw) */
       fixedWidth: Boolean,
+      /** FontAwesom spin option (fa-spin) */
+      spin: Boolean,
     };
   }
 
   static get observers() {
     return [
-      '_iconChanged(prefix, name, fixedWidth)'
+      '_iconChanged(prefix, name, fixedWidth, spin)'
     ]
   }
 
@@ -43,15 +45,18 @@ class FontawesomeIcon extends PolymerElement {
     this.root.appendChild(faStyles);
   }
 
-  _iconChanged(prefix, iconName, fixedWidth) {
+  _iconChanged(prefix, iconName, fixedWidth, spin) {
     let iconDef = fontawesome.findIconDefinition({prefix, iconName});
     if(!iconDef) {
       iconDef = fontawesome.findIconDefinition({prefix: 'far', iconName: 'question-circle'})
     }
 
-    let options = {};
+    let options = {classes: []};
     if(fixedWidth) {
-      options.classes = ['fa-fw'];
+      options.classes.push('fa-fw');
+    }
+    if(spin) {
+      options.classes.push('fa-spin');
     }
     this.$.container.innerHTML = fontawesome.icon(iconDef, options).html;
   }
