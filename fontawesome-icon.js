@@ -1,3 +1,7 @@
+// Prevent FontAwesome from replacing icons with SVGs so that the
+// surrounding page is not affected.
+window.FontAwesomeConfig = { autoReplaceSvg: false }
+
 import fontawesome from '@fortawesome/fontawesome'
 import '@fortawesome/fontawesome-free-solid';
 import '@fortawesome/fontawesome-free-regular';
