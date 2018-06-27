@@ -1,11 +1,7 @@
-// Prevent FontAwesome from replacing icons with SVGs so that the
-// surrounding page is not affected.
-window.FontAwesomeConfig = { autoReplaceSvg: false }
-
-import fontawesome from '@fortawesome/fontawesome'
-import '@fortawesome/fontawesome-free-solid';
-import '@fortawesome/fontawesome-free-regular';
-import '@fortawesome/fontawesome-free-brands';
+import * as fontawesome from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { far } from '@fortawesome/free-regular-svg-icons'
+import { fab } from '@fortawesome/free-brands-svg-icons'
 import {html, PolymerElement} from '@polymer/polymer/polymer-element.js';
 
 /**
@@ -39,6 +35,11 @@ class FontawesomeIcon extends PolymerElement {
     return [
       '_iconChanged(prefix, name, fixedWidth, spin)'
     ]
+  }
+
+  constructor() {
+    super();
+    fontawesome.library.add(fas, far, fab);
   }
 
   ready() {
