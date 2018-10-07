@@ -33,6 +33,7 @@ The `fontawesome-icon` component has the following attributes:
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | prefix      | The icon's prefix. Can be `fas`,`far`, or `fab`.                                                                                                                                           |
 | name        | The icon's name (without `fa-` prefix).                                                                                                                                                    |
+| sizing        | The icon's sizing as defined in the [FontAwesome docs](https://fontawesome.com/how-to-use/on-the-web/styling/sizing-icons).    |
 | fixed-width | If this boolean attribute is specified, the icon is set to the same fixed width independent of the actual icon (see [FontAwesome docs](https://fontawesome.com/how-to-use/svg-with-js)).   |
 
 ## Limitations
